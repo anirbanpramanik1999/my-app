@@ -59,17 +59,17 @@ export default function TextForm(props) {
     </div>
 
             <div className="container " >
-            <button className='btn btn-primary mx-3' onClick={handleUpClick}>convert to uppercase</button>
-            <button className='btn btn-primary mx-3' onClick={handleLowClick}>convert to lowerrcase</button>
-            <button className='btn btn-primary mx-3' onClick={handleClrClick}>cleare Text</button>
-            <button className='btn btn-primary mx-3' onClick={handleCopy}>copy Text</button>
-            <button className='btn btn-primary mx-3' onClick={handleExtraSpaces}>Remove extra spaces</button>
+            <button className='btn btn-info mx-3 my-3' onClick={handleUpClick}>convert to uppercase</button>
+            <button className='btn btn-info mx-3 my-3' onClick={handleLowClick}>convert to lowerrcase</button>
+            <button className='btn btn-info mx-3 my-3' onClick={handleClrClick}>cleare Text</button>
+            <button className='btn btn-info mx-3 my-3' onClick={handleCopy}>copy Text</button>
+            <button className='btn btn-info mx-3 my-3' onClick={handleExtraSpaces}>Remove extra spaces</button>
             </div>   
   </div>  
 
   <div className="container my-2 " style={{color:props.mode==='dark'?'white':'#031d37'}}>
     <h2>Your text summary</h2>
-    <p>{text.split(" ").length} words and {text.length} characters </p>
+    <p>{text.split(" ").filter((element)=>{return element.length!=0}).length} words and {text.length} characters </p>
     <p><b>{0.008 * text.split(" ").length} Minutes to read</b></p>
     <h3>Preview</h3>
     <p>{text}</p>
